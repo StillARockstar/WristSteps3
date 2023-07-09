@@ -13,11 +13,32 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.white)
-                Text("Hello, world!")
+                Spacer()
+                HStack {
+                    Text("3665")
+                        .font(.largeTitle)
+                        .foregroundStyle(.accent.gradient)
+                    Text("/")
+                        .font(.largeTitle)
+                        .foregroundStyle(.accent.gradient)
+                    VStack(alignment: .leading) {
+                        Text("10k")
+                            .fontWeight(.bold)
+                        Text("steps")
+                            .fontWeight(.bold)
+                    }
+                    .foregroundStyle(.accent.gradient)
+                    Spacer()
+                }
+                HStack {
+                    Text("Today 35%")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.gray)
+                    Spacer()
+                }
             }
+            .padding([.leading, .trailing])
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
@@ -30,7 +51,6 @@ struct ContentView: View {
             .sheet(isPresented: $showSettings, content: {
                 Text("Settings")
             })
-            .padding()
             .containerBackground(.accent.gradient, for: .navigation)
         }
     }
