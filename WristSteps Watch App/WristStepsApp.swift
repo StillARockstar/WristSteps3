@@ -11,7 +11,7 @@ import SwiftUI
 struct WristSteps_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(provider: ContentViewProvider())
         }
     }
 }

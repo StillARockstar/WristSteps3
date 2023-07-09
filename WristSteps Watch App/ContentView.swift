@@ -6,37 +6,30 @@
 //
 
 import SwiftUI
+import Charts
+
+struct HourlyChartData: Identifiable {
+    var hour: Int
+    var count: Int
+    var id = UUID()
+}
+
 
 struct ContentView: View {
+    @ObservedObject var provider: ContentViewProvider
     @State var showSettings = false
     
     var body: some View {
         NavigationStack {
             VStack {
-                Spacer()
-                HStack {
-                    Text("3665")
-                        .font(.largeTitle)
-                        .foregroundStyle(.accent.gradient)
-                    Text("/")
-                        .font(.largeTitle)
-                        .foregroundStyle(.accent.gradient)
-                    VStack(alignment: .leading) {
-                        Text("10k")
-                            .fontWeight(.bold)
-                        Text("steps")
-                            .fontWeight(.bold)
-                    }
-                    .foregroundStyle(.accent.gradient)
-                    Spacer()
-                }
-                HStack {
-                    Text("Today 35%")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.gray)
-                    Spacer()
-                }
+                HourlyStepView(
+                    hourlyStepCounts: provider.hourlyStepCounts
+                )
+                SummaryView(
+                    steps: provider.steps,
+                    stepGoal: provider.stepGoal,
+                    stepProgress: provider.stepProgress
+                )
             }
             .padding([.leading, .trailing])
             .toolbar {
@@ -57,5 +50,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(provider: ContentViewProvider())
 }
