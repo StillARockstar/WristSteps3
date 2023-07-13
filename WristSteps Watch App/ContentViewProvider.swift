@@ -10,20 +10,20 @@ import Combine
 
 class ContentViewProvider: ObservableObject {
     private var subscriptions: Set<AnyCancellable> = Set()
-    private let healthData: HealthData
-    private(set) var stepCount: Int
-    private(set) var hourlyStepCounts: [Int?]
-    let stepGoal = 10000
+    private let dataManager: DataManager
+    @Published private(set) var stepCount: Int
+    @Published private(set) var hourlyStepCounts: [Int?]
+    @Published private(set) var stepGoal = 10000
     var stepProgress: Double {
         return Double(stepCount) / Double(stepGoal) * 100
     }
     
-    init(healthData: HealthData) {
-        self.healthData = healthData
-        stepCount = healthData.stepCount
-        hourlyStepCounts = healthData.hourlyStepCounts
+    init(dataManager: DataManager) {
+        self.dataManager = dataManager
+        stepCount = dataManager.healthData.stepCount
+        hourlyStepCounts = dataManager.healthData.hourlyStepCounts
         
-        healthData.$hourlyStepCounts
+        dataManager.healthData.$hourlyStepCounts
             .debounce(for: .milliseconds(50), scheduler: RunLoop.current)
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
@@ -31,7 +31,7 @@ class ContentViewProvider: ObservableObject {
                 self?.hourlyStepCounts = newValues
             }
             .store(in: &subscriptions)
-        healthData.$stepCount
+        dataManager.healthData.$stepCount
             .debounce(for: .milliseconds(50), scheduler: RunLoop.current)
             .removeDuplicates()
             .receive(on: DispatchQueue.main)

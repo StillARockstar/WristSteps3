@@ -48,6 +48,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView(
-        provider: ContentViewProvider(healthData: PreviewHealthData())
+        provider: ContentViewProvider(dataManager: DataManager.preview)
     )
 }

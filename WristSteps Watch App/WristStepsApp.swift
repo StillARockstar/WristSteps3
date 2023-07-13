@@ -14,19 +14,19 @@ struct WristSteps_Watch_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(provider: ContentViewProvider(healthData: extensionDelegate.healthData))
+            ContentView(provider: ContentViewProvider(dataManager: extensionDelegate.dataManager))
         }
     }
 }
 
 class ExtensionDelegate: NSObject, WKApplicationDelegate {
     #if TARGET_WATCH
-    let healthData = AppHealthData()
+    let dataManager = DataManager.app
     #else
-    let healthData = PreviewHealthData()
+    let dataManager = DataManager.simulator
     #endif
     
     func applicationWillEnterForeground() {
-        healthData.reloadData(completion: { })
+        dataManager.healthData.reloadData(completion: { })
     }
 }
