@@ -9,8 +9,35 @@ import Foundation
 import Combine
 
 class ContentViewProvider: ObservableObject {
-    let steps = 3665
+    private var subscriptions: Set<AnyCancellable> = Set()
+    private let healthData: HealthData
+    private(set) var stepCount: Int
+    private(set) var hourlyStepCounts: [Int?]
     let stepGoal = 10000
-    let stepProgress = 35.0
-    let hourlyStepCounts = [75, 0, 0, 0, 0, 0, 100, 500, 1100, 700, 400, 350, 600, 650, 470, 400, 600, 900, 930, 700, 600, 400, 300, 200]
+    var stepProgress: Double {
+        return Double(stepCount) / Double(stepGoal) * 100
+    }
+    
+    init(healthData: HealthData) {
+        self.healthData = healthData
+        stepCount = healthData.stepCount
+        hourlyStepCounts = healthData.hourlyStepCounts
+        
+        healthData.$hourlyStepCounts
+            .debounce(for: .milliseconds(50), scheduler: RunLoop.current)
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newValues in
+                self?.hourlyStepCounts = newValues
+            }
+            .store(in: &subscriptions)
+        healthData.$stepCount
+            .debounce(for: .milliseconds(50), scheduler: RunLoop.current)
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newValue in
+                self?.stepCount = newValue
+            }
+            .store(in: &subscriptions)
+    }
 }

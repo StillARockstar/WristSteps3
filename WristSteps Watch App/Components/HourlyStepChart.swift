@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HourlyStepsBarData {
-    let value: Float?
+    let value: Int?
 }
 
 private struct HourlyStepsClusterRenderingData {
@@ -29,11 +29,11 @@ struct HourlyStepsChartData {
         var data = data
         data.sanitizeSize()
 
-        let maxValue = data.map({ $0.value ?? 0 }).max() ?? .infinity
+        let maxValue = CGFloat(data.map({ $0.value ?? 0 }).max() ?? .max)
         let renderingData = data.map({ dataEntry -> HourlyStepsRenderingData in
-            let value = dataEntry.value ?? 0
+            let value = CGFloat(dataEntry.value ?? 0)
             return HourlyStepsRenderingData(
-                valuePercent: maxValue > 0 ? CGFloat(value / maxValue) : 0.0,
+                valuePercent: maxValue > 0 ? value / maxValue : 0.0,
                 opacity: dataEntry.value != nil ? 1.0 : 0.3
             )
         })

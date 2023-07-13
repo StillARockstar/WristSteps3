@@ -16,6 +16,7 @@
 		06AB29362A5ABD1C00208E04 /* NumberFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB29352A5ABD1C00208E04 /* NumberFormatting.swift */; };
 		06AB29382A5ABE7400208E04 /* ContentViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB29372A5ABE7400208E04 /* ContentViewProvider.swift */; };
 		06C1C3CC2A6024B100EE00D2 /* HourlyStepChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1C3CB2A6024B100EE00D2 /* HourlyStepChart.swift */; };
+		06C1C3CF2A6027CF00EE00D2 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1C3CE2A6027CF00EE00D2 /* HealthData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		06AB29352A5ABD1C00208E04 /* NumberFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatting.swift; sourceTree = "<group>"; };
 		06AB29372A5ABE7400208E04 /* ContentViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewProvider.swift; sourceTree = "<group>"; };
 		06C1C3CB2A6024B100EE00D2 /* HourlyStepChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyStepChart.swift; sourceTree = "<group>"; };
+		06C1C3CE2A6027CF00EE00D2 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				062D219D2A575C0200272C26 /* WristStepsApp.swift */,
+				06C1C3CD2A6027AE00EE00D2 /* DataManager */,
 				06AB29342A5ABD0D00208E04 /* Helpers */,
 				06AB29312A5ABC6100208E04 /* Components */,
 				06AB29372A5ABE7400208E04 /* ContentViewProvider.swift */,
@@ -120,6 +123,14 @@
 				06AB29352A5ABD1C00208E04 /* NumberFormatting.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		06C1C3CD2A6027AE00EE00D2 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				06C1C3CE2A6027CF00EE00D2 /* HealthData.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				062D21A02A575C0200272C26 /* ContentView.swift in Sources */,
+				06C1C3CF2A6027CF00EE00D2 /* HealthData.swift in Sources */,
 				06AB29362A5ABD1C00208E04 /* NumberFormatting.swift in Sources */,
 				06AB29382A5ABE7400208E04 /* ContentViewProvider.swift in Sources */,
 				062D219E2A575C0200272C26 /* WristStepsApp.swift in Sources */,
@@ -366,6 +378,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WristSteps;
+				INFOPLIST_KEY_NSMotionUsageDescription = "WristSteps requires access to show you the most up-to-date step count";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -396,6 +409,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WristSteps;
+				INFOPLIST_KEY_NSMotionUsageDescription = "WristSteps requires access to show you the most up-to-date step count";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -19,11 +19,11 @@ struct ContentView: View {
                     chartData: HourlyStepsChartData(
                         data: provider
                             .hourlyStepCounts
-                            .map({ HourlyStepsBarData(value: Float($0)) })
+                            .map({ HourlyStepsBarData(value: $0) })
                     )
                 )
                 SummaryView(
-                    steps: provider.steps,
+                    steps: provider.stepCount,
                     stepGoal: provider.stepGoal,
                     stepProgress: provider.stepProgress
                 )
@@ -47,5 +47,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(provider: ContentViewProvider())
+    ContentView(
+        provider: ContentViewProvider(healthData: PreviewHealthData())
+    )
 }
