@@ -8,13 +8,6 @@
 import SwiftUI
 import Charts
 
-struct HourlyChartData: Identifiable {
-    var hour: Int
-    var count: Int
-    var id = UUID()
-}
-
-
 struct ContentView: View {
     @ObservedObject var provider: ContentViewProvider
     @State var showSettings = false
@@ -22,8 +15,12 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HourlyStepView(
-                    hourlyStepCounts: provider.hourlyStepCounts
+                HourlyStepsChart(
+                    chartData: HourlyStepsChartData(
+                        data: provider
+                            .hourlyStepCounts
+                            .map({ HourlyStepsBarData(value: Float($0)) })
+                    )
                 )
                 SummaryView(
                     steps: provider.steps,
