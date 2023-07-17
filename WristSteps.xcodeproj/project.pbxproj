@@ -20,6 +20,11 @@
 		06C1C3D12A603D1E00EE00D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1C3D02A603D1E00EE00D2 /* DataManager.swift */; };
 		06C1C3D42A603EB100EE00D2 /* AppHealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1C3D32A603EB100EE00D2 /* AppHealthData.swift */; };
 		06C1C3D62A603EC400EE00D2 /* PreviewHealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1C3D52A603EC400EE00D2 /* PreviewHealthData.swift */; };
+		06D4036A2A60564000E051F5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D403692A60564000E051F5 /* WidgetKit.framework */; };
+		06D4036C2A60564000E051F5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06D4036B2A60564000E051F5 /* SwiftUI.framework */; };
+		06D4036F2A60564000E051F5 /* AppWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D4036E2A60564000E051F5 /* AppWidget.swift */; };
+		06D403712A60564200E051F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06D403702A60564200E051F5 /* Assets.xcassets */; };
+		06D403752A60564200E051F5 /* AppWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 06D403672A60564000E051F5 /* AppWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 062D21972A575C0200272C26;
 			remoteInfo = "WristSteps Watch App";
+		};
+		06D403732A60564200E051F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 062D218C2A575C0200272C26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06D403662A60564000E051F5;
+			remoteInfo = AppWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,6 +54,17 @@
 				062D21992A575C0200272C26 /* WristSteps Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D403762A60564200E051F5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				06D403752A60564200E051F5 /* AppWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -61,6 +84,12 @@
 		06C1C3D02A603D1E00EE00D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		06C1C3D32A603EB100EE00D2 /* AppHealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHealthData.swift; sourceTree = "<group>"; };
 		06C1C3D52A603EC400EE00D2 /* PreviewHealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHealthData.swift; sourceTree = "<group>"; };
+		06D403672A60564000E051F5 /* AppWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AppWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		06D403692A60564000E051F5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		06D4036B2A60564000E051F5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		06D4036E2A60564000E051F5 /* AppWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidget.swift; sourceTree = "<group>"; };
+		06D403702A60564200E051F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06D403722A60564200E051F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +100,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06D403642A60564000E051F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D4036C2A60564000E051F5 /* SwiftUI.framework in Frameworks */,
+				06D4036A2A60564000E051F5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				062D219C2A575C0200272C26 /* WristSteps Watch App */,
+				06D4036D2A60564000E051F5 /* AppWidget */,
+				06D403682A60564000E051F5 /* Frameworks */,
 				062D21932A575C0200272C26 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +127,7 @@
 			children = (
 				062D21922A575C0200272C26 /* WristSteps.app */,
 				062D21982A575C0200272C26 /* WristSteps Watch App.app */,
+				06D403672A60564000E051F5 /* AppWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +191,25 @@
 			path = HealthData;
 			sourceTree = "<group>";
 		};
+		06D403682A60564000E051F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06D403692A60564000E051F5 /* WidgetKit.framework */,
+				06D4036B2A60564000E051F5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06D4036D2A60564000E051F5 /* AppWidget */ = {
+			isa = PBXGroup;
+			children = (
+				06D4036E2A60564000E051F5 /* AppWidget.swift */,
+				06D403702A60564200E051F5 /* Assets.xcassets */,
+				06D403722A60564200E051F5 /* Info.plist */,
+			);
+			path = AppWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,15 +237,34 @@
 				062D21942A575C0200272C26 /* Sources */,
 				062D21952A575C0200272C26 /* Frameworks */,
 				062D21962A575C0200272C26 /* Resources */,
+				06D403762A60564200E051F5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				06D403742A60564200E051F5 /* PBXTargetDependency */,
 			);
 			name = "WristSteps Watch App";
 			productName = "WristSteps Watch App";
 			productReference = 062D21982A575C0200272C26 /* WristSteps Watch App.app */;
 			productType = "com.apple.product-type.application";
+		};
+		06D403662A60564000E051F5 /* AppWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06D403792A60564200E051F5 /* Build configuration list for PBXNativeTarget "AppWidgetExtension" */;
+			buildPhases = (
+				06D403632A60564000E051F5 /* Sources */,
+				06D403642A60564000E051F5 /* Frameworks */,
+				06D403652A60564000E051F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppWidgetExtension;
+			productName = AppWidgetExtension;
+			productReference = 06D403672A60564000E051F5 /* AppWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -201,6 +280,9 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 					062D21972A575C0200272C26 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					06D403662A60564000E051F5 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -220,6 +302,7 @@
 			targets = (
 				062D21912A575C0200272C26 /* WristSteps */,
 				062D21972A575C0200272C26 /* WristSteps Watch App */,
+				06D403662A60564000E051F5 /* AppWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -238,6 +321,14 @@
 			files = (
 				062D21A52A575C0400272C26 /* Preview Assets.xcassets in Resources */,
 				062D21A22A575C0400272C26 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06D403652A60564000E051F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D403712A60564200E051F5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +352,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		06D403632A60564000E051F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06D4036F2A60564000E051F5 /* AppWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -268,6 +367,11 @@
 			isa = PBXTargetDependency;
 			target = 062D21972A575C0200272C26 /* WristSteps Watch App */;
 			targetProxy = 062D219A2A575C0200272C26 /* PBXContainerItemProxy */;
+		};
+		06D403742A60564200E051F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06D403662A60564000E051F5 /* AppWidgetExtension */;
+			targetProxy = 06D403732A60564200E051F5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -389,6 +493,7 @@
 		062D21A92A575C0400272C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -421,6 +526,7 @@
 		062D21AA2A575C0400272C26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +590,69 @@
 			};
 			name = Release;
 		};
+		06D403772A60564200E051F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQQ4RZBUL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AppWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 3.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.Schoder.WristSteps.watchkitapp.dev.AppWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		06D403782A60564200E051F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GQQ4RZBUL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AppWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 3.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = at.Schoder.WristSteps.watchkitapp.dev.AppWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -510,6 +679,15 @@
 			buildConfigurations = (
 				062D21AD2A575C0400272C26 /* Debug */,
 				062D21AE2A575C0400272C26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06D403792A60564200E051F5 /* Build configuration list for PBXNativeTarget "AppWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06D403772A60564200E051F5 /* Debug */,
+				06D403782A60564200E051F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
