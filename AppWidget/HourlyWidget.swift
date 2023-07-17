@@ -53,7 +53,7 @@ struct HourlyWidgetEntryView : View {
 }
 
 struct HourlyWidget: Widget {
-    let kind: String = "AppWidget"
+    let kind: String = "HourlyWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in

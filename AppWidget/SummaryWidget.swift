@@ -27,7 +27,7 @@ struct SummaryWidgetEntryView : View {
 }
 
 struct SummaryWidget: Widget {
-    let kind: String = "AppWidget"
+    let kind: String = "SummaryWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
