@@ -7,15 +7,31 @@
 
 import SwiftUI
 
+enum SummaryViewStepFormatting {
+    case regular
+    case kFormatted
+}
+
 struct SummaryView: View {
+    @State private var stepFormatting: SummaryViewStepFormatting
     let steps: Int
     let stepGoal: Int
     let stepProgress: Double
     
+    init(steps: Int, stepGoal: Int, stepProgress: Double, stepFormatting: SummaryViewStepFormatting = .regular) {
+        self.stepFormatting = stepFormatting
+        self.steps = steps
+        self.stepGoal = stepGoal
+        self.stepProgress = stepProgress
+    }
+    
     var body: some View {
         VStack {
             HStack {
-                Text("\(steps)")
+                Text(stepFormatting == .regular
+                     ? "\(steps)"
+                     : steps.kFormattedString
+                )
                     .font(.largeTitle)
                     .foregroundStyle(.accent.gradient)
                 Text("/")
@@ -41,6 +57,9 @@ struct SummaryView: View {
     }
 }
 
-#Preview {
+#Preview("Regular Formatted") {
     SummaryView(steps: 5555, stepGoal: 10000, stepProgress: 35)
+}
+#Preview("k Formatted") {
+    SummaryView(steps: 5555, stepGoal: 10000, stepProgress: 35, stepFormatting: .kFormatted)
 }
