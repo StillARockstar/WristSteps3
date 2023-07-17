@@ -12,6 +12,7 @@ import SwiftUI
 struct AppWidgets: WidgetBundle {
    var body: some Widget {
        SummaryWidget()
+       HourlyWidget()
    }
 }
 
