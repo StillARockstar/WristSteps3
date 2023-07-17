@@ -15,6 +15,8 @@
 		0685A1A82A65C62F00D1D710 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB29322A5ABC7600208E04 /* SummaryView.swift */; };
 		0685A1A92A65C66400D1D710 /* NumberFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB29352A5ABD1C00208E04 /* NumberFormatting.swift */; };
 		0685A1AC2A65CDCC00D1D710 /* AppWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685A1AA2A65CD7100D1D710 /* AppWidgets.swift */; };
+		0685A1AF2A65CE9600D1D710 /* HourlyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0685A1AD2A65CE5600D1D710 /* HourlyWidget.swift */; };
+		0685A1B02A65CEC200D1D710 /* HourlyStepChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1C3CB2A6024B100EE00D2 /* HourlyStepChart.swift */; };
 		06AB29332A5ABC7600208E04 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB29322A5ABC7600208E04 /* SummaryView.swift */; };
 		06AB29362A5ABD1C00208E04 /* NumberFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB29352A5ABD1C00208E04 /* NumberFormatting.swift */; };
 		06AB29382A5ABE7400208E04 /* ContentViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB29372A5ABE7400208E04 /* ContentViewProvider.swift */; };
@@ -80,6 +82,7 @@
 		062D21A12A575C0400272C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		062D21A42A575C0400272C26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0685A1AA2A65CD7100D1D710 /* AppWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWidgets.swift; sourceTree = "<group>"; };
+		0685A1AD2A65CE5600D1D710 /* HourlyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWidget.swift; sourceTree = "<group>"; };
 		06AB29322A5ABC7600208E04 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		06AB29352A5ABD1C00208E04 /* NumberFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatting.swift; sourceTree = "<group>"; };
 		06AB29372A5ABE7400208E04 /* ContentViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewProvider.swift; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 			children = (
 				0685A1AA2A65CD7100D1D710 /* AppWidgets.swift */,
 				06D4036E2A60564000E051F5 /* SummaryWidget.swift */,
+				0685A1AD2A65CE5600D1D710 /* HourlyWidget.swift */,
 				06D403702A60564200E051F5 /* Assets.xcassets */,
 				06D403722A60564200E051F5 /* Info.plist */,
 			);
@@ -362,8 +366,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0685A1A92A65C66400D1D710 /* NumberFormatting.swift in Sources */,
+				0685A1B02A65CEC200D1D710 /* HourlyStepChart.swift in Sources */,
 				06D4036F2A60564000E051F5 /* SummaryWidget.swift in Sources */,
 				0685A1A82A65C62F00D1D710 /* SummaryView.swift in Sources */,
+				0685A1AF2A65CE9600D1D710 /* HourlyWidget.swift in Sources */,
 				0685A1AC2A65CDCC00D1D710 /* AppWidgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

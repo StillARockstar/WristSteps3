@@ -1,6 +1,6 @@
 //
-//  AppWidget.swift
-//  AppWidget
+//  SummaryWidget.swift
+//  SummaryWidget
 //
 //  Created by Michael Schoder on 13.07.23.
 //
@@ -39,7 +39,7 @@ struct SummaryWidget: Widget {
     }
 }
 
-#Preview(as: .accessoryCorner) {
+#Preview(as: .accessoryRectangular) {
     SummaryWidget()
 } timeline: {
     SimpleEntry(date: .now, emoji: "😎")
